@@ -18,8 +18,10 @@ if ( ! function_exists( 'guideservice_scripts' ) ) :
 	function guideservice_scripts() {
 		
 		// Enqueue the main Stylesheet.
-		wp_enqueue_style('main-stylesheet', get_template_directory_uri() . '/dist/assets/css/' .
-		                                    foundationpress_asset_path('app.css'), array(), '2.10.4', 'all');
+		wp_enqueue_style('main-stylesheet', get_template_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('app.css'), array(), '2.10.4', 'all');
+		
+		// Parent Theme CSS
+		wp_enqueue_style('custom-style', get_template_directory_uri() . '/assets/css/custom.css', array(), '1.0.0', 'all');
 		
 		// Child Theme CSS
 		wp_enqueue_style( 'child-style',get_stylesheet_directory_uri() . '/style.css', array(), '1.0.0', 'all' );
